@@ -1,4 +1,5 @@
 const hbs = require('hbs');
+// import { registerHelper } from 'hbs'; // ES6 MODULE
 
 hbs.registerHelper('getAnio', () => {
     return new Date().getFullYear();

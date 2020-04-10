@@ -7,6 +7,7 @@ require('./hbs/helpers/helpers'); // HELPERS
 hbs.registerPartials(__dirname + '/views/partials'); // PARTIALS
 
 // EXPRESS
+const port = process.env.PORT || 3000;
 app.set('view engine', 'hbs'); // hbs (handlebars) engine
 app.use( express.static(__dirname + '/public'));
 app.get('/', function (req, res) {
@@ -31,7 +32,7 @@ app.get('/data', function (req, res) {
     res.send('Hola data'); // express detecta que estoy enviando un JSON
 });
 
-app.listen(3000, ()=>{
-    console.log('Escuchando en el puerto', 3000);
+app.listen(port, ()=>{
+    console.log('Escuchando en el puerto', port);
 });
 
